@@ -46,10 +46,12 @@ let getUser = (req, res, next) => {
   User.findById(req.params.id, function (err, user) {
     if (err)
       res.send(err);
-    res.json({
-      message: 'User details loading...',
-      data: user
-    })
+    else {
+      res.json({
+        message: 'User details loading...',
+        data: user
+      })
+    }
     // console.log("=========================",user);
 
   })
